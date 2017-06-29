@@ -396,7 +396,8 @@ class MCEqRun(object):
           skip_D_matrix (bool): Omit re-creating D matrix
 
         """
-        print (self.cname +
+        if dbg>0:
+            print (self.cname +
                "::_init_default_matrices():Start filling matrices. Skip_D_matrix = {0}").format(
                    skip_D_matrix if self.iam_mat_initialized else False)
 
@@ -444,8 +445,9 @@ class MCEqRun(object):
                 print "    nnz        : {0}".format(self.dec_m.nnz)
             if dbg > 1:
                 print "    sum        :", self.dec_m.sum()
-
-        print self.cname + "::_init_default_matrices():Done filling matrices."
+        
+        if dbg>0:
+            print self.cname + "::_init_default_matrices():Done filling matrices."
 
     def _init_progress_bar(self, maximum):
         """Initializes the progress bar.
