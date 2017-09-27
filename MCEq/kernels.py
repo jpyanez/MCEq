@@ -565,7 +565,8 @@ def kern_MKL_sparse(nsteps, dX, rho_inv, int_m, dec_m,
             grid_sol.append(np.copy(npphi))
             grid_step += 1
 
-    print "Performance: {0:6.2f}ms/iteration".format(1e3 * (time() - start) / float(nsteps))
+    if config['debug_level'] > 0:
+        print "Performance: {0:6.2f}ms/iteration".format(1e3 * (time() - start) / float(nsteps))
 
     return npphi, grid_sol
 
