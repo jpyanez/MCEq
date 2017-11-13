@@ -631,13 +631,8 @@ class InteractionYields(object):
         # Charged and neutral kaons
         elif abs(sec_pdg) == 321:
             # approx.: p->K+ ~ n-> K+, p->K- ~ n-> K-
-<<<<<<< HEAD
-            mpli[(symm_pdg, -sec_pdg)][('isospin', args)] = kmat
-            print args
-=======
             mpli[(symm_pdg, sec_pdg)][('isospin', args)] = kmat
 
->>>>>>> 771cbbad3ab3cce4dea8b36fed744f415b157dcd
             k0_arg = (args[0], 0.5*args[1])
             if (prim_pdg, -sec_pdg) in mpli:
                 # Compute average of K+ and K- modification matrices
